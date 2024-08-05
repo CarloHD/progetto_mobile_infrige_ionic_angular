@@ -1,0 +1,30 @@
+<div class="modal_wrapper">
+  <header>
+    <h2 *ngIf="header">{{headerText | titlecase}}</h2>
+    <div class="lang_select">
+      <p id="ita"
+         [ngClass]="{'is_active': languageSelect === 0}"
+         (click)="onSwitchLang()">ITA</p>
+      <p id="eng"
+         [ngClass]="{'is_active': languageSelect === 1}"
+         (click)="onSwitchLang()">ENG</p>
+    </div>
+
+  </header>
+  <main>
+    <p [innerHTML]="mainText"></p>
+  </main>
+  <footer>
+    <ng-container *ngFor="let button of buttonsCustom">
+      <ion-button shape="round"
+                  (click)="button?.handler()">
+        {{button.text}}
+      </ion-button>
+    </ng-container>
+    <ion-button shape="round"
+                (click)="onDismiss()">
+      {{dismissButtonText}}
+    </ion-button>
+  </footer>
+
+</div>

@@ -34,4 +34,42 @@
 
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
-@import "@ionic/angular/css/palettes/dark.system.css";
+// @import "@ionic/angular/css/palettes/dark.system.css";
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+  color: var(--text);
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+}
+
+ion-content {
+  --padding-top: 20px;
+  --padding-bottom: 20px;
+  --padding-start: 20px;
+  --padding-end: 20px;
+  --background: unset;
+  --color: inherit;
+}
+
+
+.card_wrapper {
+
+  background-color: var(--secondary);
+  border-radius: calc(var(--radius) - 20px);
+  padding: 20px;
+}
+
+
+.card_wrapper:not(:last-of-type) {
+  margin-bottom: 20px;
+}
+
+
+.custom_modal {
+  --height: fit-content;
+  --width: 70%;
+  --border-radius: calc(var(--radius) - 20px);
+  --background: var(--secondary);
+}

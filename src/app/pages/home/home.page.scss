@@ -1,0 +1,18 @@
+.home_wrapper {
+
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+}
+
+.freezer_section {
+
+  flex-grow: 1;
+}
+
+.frigo_section {
+
+
+  flex-grow: 3;
+}

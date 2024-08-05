@@ -1,0 +1,33 @@
+.sidenav_wrapper {
+
+  height: 100%;
+  padding: 30px 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 30px;
+
+  ion-button {
+    --background: var(--primary);
+
+    ion-icon {
+
+      color: var(--secondary);
+    }
+  }
+
+
+  #setting_button {
+    margin-top: auto;
+  }
+
+}
+
+
+.link_active {
+
+  --box-shadow: inset 1px 1px 5px rgba(0, 0, 0, .1);
+
+}

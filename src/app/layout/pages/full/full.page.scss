@@ -1,0 +1,47 @@
+.layout_wrapper {
+  background-image: url('../../../../assets/icon/infrige-logo-redesign.svg');
+  background-repeat: no-repeat;
+  background-size: 350px;
+  background-position: center;
+  background-blend-mode: overlay;
+  background-color: var(--secondary);
+  height: 100dvh;
+  width: 100vw;
+
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: row-reverse;
+
+
+}
+
+app-sidenav {
+  margin-right: auto;
+  max-width: fit-content;
+  padding: 0 15px;
+  height: 100dvh;
+}
+
+
+ion-router-outlet {
+  position: relative;
+  right: 0;
+
+  width: 100%;
+  height: 95%;
+  background: var(--primary);
+
+  border-radius: var(--radius) 0 0 var(--radius);
+
+  transition: transform ease-in-out 200ms;
+}
+
+
+.open_page {
+  transform: translateX(0);
+}
+
+.close_page {
+  transform: translateX(100%);
+}
