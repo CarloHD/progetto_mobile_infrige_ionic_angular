@@ -22,7 +22,6 @@ app-sidenav {
   padding: 15px;
 }
 
-
 ion-router-outlet {
   position: relative;
   right: 0;
@@ -36,11 +35,10 @@ ion-router-outlet {
   transition: transform ease-in-out 200ms;
 }
 
-
-.open_page {
+.page_open {
   transform: translateX(0);
 }
 
-.close_page {
+.page_closed {
   transform: translateX(100%);
 }

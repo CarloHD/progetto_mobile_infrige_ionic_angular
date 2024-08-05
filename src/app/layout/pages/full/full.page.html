@@ -1,6 +1,7 @@
 <div class="layout_wrapper">
   <app-sidenav />
   <ion-router-outlet [animated]="false"
-                     [ngClass]="pageChanging ? 'close_page' : 'open_page'" />
+                     [ngClass]="pageChanging ? 'page_closed' : 'page_open'"
+                     (transitionend)="endTransitionPage(pageChanging)" />
 
 </div>

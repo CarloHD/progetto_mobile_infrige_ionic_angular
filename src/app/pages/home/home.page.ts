@@ -1,20 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuController } from '@ionic/angular';
 
-@Component( {
+@Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
-  styleUrls: [ './home.page.scss' ],
-} )
+  styleUrls: ['./home.page.scss'],
+})
 export class HomePage implements OnInit {
 
-  constructor( private menuController: MenuController ) {}
+  constructor() {}
 
   ngOnInit() {
   }
 
   onClick() {
-    this.menuController.open();
+
   }
 
 

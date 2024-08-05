@@ -1,28 +1,33 @@
 import { Injectable } from '@angular/core';
 import { NavController } from '@ionic/angular';
-import { Subject } from 'rxjs';
+import { first, Subject } from 'rxjs';
 
 
-@Injectable( {
+@Injectable({
   providedIn: 'root'
-} )
+})
 export class ChangePageService {
 
-  changePageEvent: Subject<boolean> = new Subject();
+  navigationPageChangeEvent: Subject<boolean> = new Subject();
+  transitionPageChangeEvent: Subject<boolean> = new Subject();
 
   changePageTimeout: any;
 
-  constructor( private navController: NavController ) {}
+  constructor(private navController: NavController) {}
 
-  onChangePage( path: string ) {
-    clearTimeout( this.changePageTimeout );
-    this.changePageEvent.next( true );
+  onChangePage(path: string) {
 
-    this.changePageTimeout = setTimeout( () => {
-      this.navController.navigateForward( path ).then( () => {
+    this.navigationPageChangeEvent.next(true);
 
-        this.changePageEvent.next( false );
-      } );
-    }, 300 );
+    this.transitionPageChangeEvent.pipe(first()).subscribe(async (pageInNavigation) => {
+
+      if (pageInNavigation) {
+
+        const routed = await this.navController.navigateForward(path);
+
+        routed && this.navigationPageChangeEvent.next(false);
+      }
+    });
   }
+
 }

@@ -30,7 +30,7 @@
       display: flex;
       flex-wrap: nowrap;
       cursor: pointer;
-
+      user-select: none;
 
       p {
         margin: 0;

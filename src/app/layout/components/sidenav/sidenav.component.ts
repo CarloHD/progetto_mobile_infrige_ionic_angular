@@ -4,25 +4,20 @@ import { IonicModule } from '@ionic/angular';
 import { ChangePageService } from 'src/app/services/change-page/change-page.service';
 
 
-@Component( {
+@Component({
   selector: 'app-sidenav',
   templateUrl: './sidenav.component.html',
-  styleUrls: [ './sidenav.component.scss' ],
+  styleUrls: ['./sidenav.component.scss'],
   standalone: true,
-  imports: [ IonicModule, RouterModule ]
-} )
-export class SidenavComponent implements OnInit {
-  pageInChange: boolean = false;
+  imports: [IonicModule, RouterModule]
+})
+export class SidenavComponent {
+  constructor(private changePageService: ChangePageService) {}
 
-  constructor( private changePageService: ChangePageService ) {}
+  onClickNav(path: string) {
 
-  ngOnInit(): void {
-    this.changePageService.changePageEvent.subscribe( ( value ) => { this.pageInChange = value; } );
-  }
-  onClickNav( path: string ) {
-
-    if ( !this.pageInChange && location.pathname !== path ) {
-      this.changePageService.onChangePage( path );
+    if (location.pathname !== path) {
+      this.changePageService.onChangePage(path);
     }
   }
 

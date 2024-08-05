@@ -24,16 +24,16 @@ export class FullPage implements OnInit {
 
   ngOnInit(): void {
 
-    // this.modalService.showModal( {
-    //   header: 'welcome',
-    //   text: 'welcome_msg',
-    //   extraData: { languageSelector: true }
-    // } );
+    this.modalService.showModal({
+      header: 'welcome',
+      text: 'welcome_msg',
+      extraData: { languageSelector: true }
+    });
 
-
-    this.changePageService.changePageEvent.subscribe((value) => { this.pageChanging = value; });
+    this.changePageService.navigationPageChangeEvent.subscribe((value) => { this.pageChanging = value; });
   }
 
-
-
+  endTransitionPage(pageIsChanged: boolean) {
+    this.changePageService.transitionPageChangeEvent.next(pageIsChanged);
+  }
 }
